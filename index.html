@@ -43,7 +43,6 @@
   .page { display: none; }
   .page.active { display: block; }
 
-  /* Navbar */
   .navbar { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
   .navbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .navbar-brand { display: flex; align-items: center; gap: 10px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--primary); letter-spacing: -0.3px; }
@@ -55,7 +54,6 @@
   .navbar-cod { display: flex; align-items: center; gap: 6px; background: linear-gradient(135deg, var(--gold-light), #fef9e6); border: 1px solid var(--gold); padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; color: #92400e; white-space: nowrap; }
   @media (max-width: 640px) { .navbar-cod { display: none; } .navbar-links button { padding: 6px 12px; font-size: 0.8rem; } .navbar-brand { font-size: 1rem; } .navbar-icon { width: 32px; height: 32px; } }
 
-  /* Urgent Announcement Bar */
   .urgent-bar { background: linear-gradient(135deg, #1e1e2f, #2d2d44); color: white; padding: 8px 16px; text-align: center; font-size: 0.75rem; font-weight: 600; white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
   .urgent-bar::-webkit-scrollbar { display: none; }
   .urgent-bar span { background: var(--red); padding: 2px 8px; border-radius: 20px; margin-right: 8px; font-size: 0.7rem; display: inline-block; }
@@ -142,14 +140,13 @@
   .feature-title { font-weight: 800; font-size: 0.85rem; margin-bottom: 5px; }
   .feature-desc { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
 
-  /* Enhanced Description Section */
+  /* Enhanced Description */
   .desc-section { background: white; }
   .desc-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
   @media (max-width: 768px) { .desc-content { grid-template-columns: 1fr; gap: 25px; } }
   .desc-text p { color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; font-size: 0.85rem; }
   .feature-list-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
   .feature-list-item { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text); background: var(--bg); padding: 8px 12px; border-radius: 12px; }
-  .feature-list-item span:first-child { font-size: 1rem; }
   .perfect-for-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
   .perfect-tag { background: var(--primary-xlight); color: var(--primary-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
   .whats-in-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; margin-top: 20px; }
@@ -200,6 +197,7 @@
   .input-phone { flex: 1; padding: 12px 14px; border: 2px solid var(--border); border-radius: 12px; font-size: 0.85rem; }
   .btn-sub { padding: 12px 20px; background: #22c55e; color: white; border-radius: 12px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
 
+  /* Checkout Modal - City Input as Text Field */
   .modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px; }
   .modal-overlay.open { display: flex; }
   .modal-box { background: white; border-radius: 28px; max-width: 520px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl); }
@@ -215,20 +213,24 @@
   .cod-trust-badge .sub { font-size: 0.7rem; color: #a16207; font-weight: 500; }
   .form-group { margin-bottom: 16px; }
   .form-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 5px; display: block; }
-  .form-input, .form-select, .form-textarea { width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 14px; font-size: 0.9rem; }
+  .form-input, .form-textarea { width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 14px; font-size: 0.9rem; }
   .btn-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; font-weight: 800; font-size: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.25s; border: none; }
+
   .thankyou-modal { position: fixed; inset: 0; z-index: 1100; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; padding: 20px; }
   .thankyou-modal.open { display: flex; }
   .thankyou-box { background: white; border-radius: 28px; padding: 32px 28px; max-width: 420px; width: 100%; text-align: center; }
   .live-notif { position: fixed; bottom: 20px; left: 20px; z-index: 900; background: white; border-radius: 14px; padding: 12px 16px; max-width: 270px; box-shadow: 0 8px 28px rgba(0,0,0,0.15); border: 1px solid var(--border); display: none; align-items: center; gap: 12px; }
   .live-notif.show { display: flex; }
   .notif-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--primary-xlight); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
+  .notif-dot { position: absolute; top: -4px; left: -4px; width: 10px; height: 10px; border-radius: 50%; background: #22c55e; border: 2px solid white; }
+
   .footer { background: #0f172a; color: rgba(255,255,255,0.7); margin-top: 0; }
   .footer-top { padding: 35px 0 25px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
   @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
   @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; gap: 25px; } }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 15px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.7rem; }
+
   .sec-heading { text-align: center; margin-bottom: 30px; }
   .sec-heading h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; margin-bottom: 6px; }
   .sec-heading p { font-size: 0.8rem; color: var(--text-muted); }
@@ -263,7 +265,7 @@
 
   <section class="stats-section"><div class="container"><div class="stats-grid"><div class="stat-card"><span class="stat-num">10,000+</span><div class="stat-label">Units Sold</div></div><div class="stat-card"><span class="stat-num">4.9★</span><div class="stat-label">Avg Rating</div></div><div class="stat-card"><span class="stat-num">100%</span><div class="stat-label">Cash on Delivery</div></div><div class="stat-card"><span class="stat-num">Free</span><div class="stat-label">Shipping</div></div></div></div></section>
 
-  <!-- ENHANCED DESCRIPTION SECTION WITH NEW FEATURES -->
+  <!-- Enhanced Description -->
   <section class="desc-section section">
     <div class="container">
       <div class="desc-content">
@@ -311,7 +313,7 @@
     </div>
   </section>
 
-  <div class="container"><div class="sec-heading"><h2>Technical Specifications</h2><div class="sec-divider"></div></div><table class="specs-table"><thead><tr><th>Specification</th><th>Details</th></tr></thead><tbody><tr><td>Battery Life</td><td>8–10 hours</td> </tr> <tr><td>Charging Time</td><td>2–3 hours</td> </tr> <tr><td>Speed Settings</td><td>3 (Low/Medium/High)</td> </tr> <tr><td>Material</td><td>ABS Plastic</td> </tr> </tbody> </table> </div>
+  <div class="container"><div class="sec-heading"><h2>Technical Specifications</h2><div class="sec-divider"></div></div><table class="specs-table"><thead><tr><th>Specification</th><th>Details</th></tr></thead><tbody><tr><td>Battery Life</td><td>8–10 hours</td></tr><tr><td>Charging Time</td><td>2–3 hours</td></tr><tr><td>Speed Settings</td><td>3 (Low/Medium/High)</td></tr><tr><td>Material</td><td>ABS Plastic</td></tr></tbody></table></div>
 
   <section class="reviews-section section"><div class="container"><div class="sec-heading"><h2>What Customers Are Saying</h2><div class="sec-divider"></div></div><div class="rating-overview"><div class="rating-big"><div class="rating-big-num">4.9</div><div class="stars">★★★★★</div><p>324 reviews</p></div><div class="rating-bars"><div class="rating-bar-row"><span>5★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:91%"></div></div><span>91%</span></div><div class="rating-bar-row"><span>4★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:6%"></div></div><span>6%</span></div></div></div><div class="reviews-grid" id="reviewsGrid"></div><div class="text-center" style="margin-top:20px; text-align:center;"><button onclick="showPage('reviews')" style="padding:10px 28px;border:2px solid var(--primary);color:var(--primary);border-radius:40px;font-weight:700;font-size:0.8rem;background:transparent;cursor:pointer;">View All 324 Reviews →</button></div></div></section>
 
@@ -326,17 +328,28 @@
 
 <footer class="footer"><div class="footer-top"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo" style="display:flex; align-items:center; gap:10px; font-weight:800;"><div style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:8px;display:flex;align-items:center;justify-content:center;">🌬️</div>Fans O™</div><p class="footer-desc">Pakistan's trusted foldable rechargeable mini fan.</p></div><div class="footer-section"><h4>Quick Links</h4><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('reviews')">Reviews</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div class="footer-section"><h4>Policies</h4><ul class="footer-links"><li><a>7-Day Returns</a></li><li><a>1-Month Warranty</a></li></ul></div></div></div></div><div class="footer-bottom"><div class="container"><div>© <span id="footerYear"></span> Fans O™. All Rights Reserved.</div><div class="made-with">Made with ❤️ in Pakistan 🇵🇰</div></div></div></footer>
 
-<div class="modal-overlay" id="checkoutModal"><div class="modal-box"><div class="modal-header"><h3>Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div><div class="modal-body"><div class="modal-order-summary"><img class="modal-order-img" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"><div><h4 style="font-weight:800;">Fans O Mini Fan</h4><div>Qty: <span id="modalQty">1</span> × Rs. 2,799</div><div style="font-weight:800;">Total: Rs. <span id="modalTotal">2,799</span></div></div></div><div class="cod-trust-badge"><span class="icon">💵</span><div><div class="text">100% Cash on Delivery</div><div class="sub">Pay only when you receive the product — No advance payment</div></div><span class="icon"></span></div><form id="orderForm" onsubmit="submitOrder(event)"><div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="f-name" required></div><div class="form-group"><label class="form-label">Phone (03xxxxxxxxx) *</label><input class="form-input" id="f-phone" required></div><div class="form-group"><label class="form-label">City *</label><select class="form-select" id="f-city"><option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Multan</option></select></div><div class="form-group"><label class="form-label">Complete Address *</label><textarea class="form-textarea" id="f-address" rows="2" required></textarea></div><button type="submit" class="btn-submit">✅ Place Order</button></form></div></div></div>
+<!-- Checkout Modal with City Text Input -->
+<div class="modal-overlay" id="checkoutModal"><div class="modal-box"><div class="modal-header"><h3>Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div><div class="modal-body">
+  <div class="modal-order-summary"><img class="modal-order-img" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"><div><h4 style="font-weight:800;">Fans O Mini Fan</h4><div>Qty: <span id="modalQty">1</span> × Rs. 2,799</div><div style="font-weight:800;">Total: Rs. <span id="modalTotal">2,799</span></div></div></div>
+  <div class="cod-trust-badge"><span class="icon">💵</span><div><div class="text">100% Cash on Delivery</div><div class="sub">Pay only when you receive the product — No advance payment</div></div><span class="icon">✅</span></div>
+  <form id="orderForm" onsubmit="submitOrder(event)">
+    <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="f-name" required></div>
+    <div class="form-group"><label class="form-label">Phone Number * (03xxxxxxxxx)</label><input class="form-input" id="f-phone" required placeholder="0300 1234567"></div>
+    <div class="form-group"><label class="form-label">City / Town *</label><input class="form-input" id="f-city" required placeholder="e.g. Karachi, Lahore, Islamabad, or your city"></div>
+    <div class="form-group"><label class="form-label">Complete Address *</label><textarea class="form-textarea" id="f-address" rows="2" required placeholder="House/Flat No., Street, Area, Landmark"></textarea></div>
+    <button type="submit" class="btn-submit">✅ Place Order</button>
+  </form>
+</div></div></div>
 
 <div class="thankyou-modal" id="thankyouModal"><div class="thankyou-box"><div class="thankyou-icon">🎉</div><h2>Order Placed!</h2><p>Our team will call you within 2-4 hours to confirm.</p><div class="order-summary-box" id="tyOrderSummary" style="background:var(--bg); padding:14px; border-radius:14px; margin:16px 0;"></div><button class="btn-close-ty" onclick="closeThankyou()" style="padding:12px 24px; background:linear-gradient(135deg,var(--primary),var(--primary-light)); color:white; font-weight:800; border-radius:40px; cursor:pointer;">Continue Shopping</button></div></div>
 
 <div class="live-notif" id="liveNotif"><div class="notif-dot"></div><div class="notif-icon">🌬️</div><div><strong id="notifName">Ahmed Riaz from Karachi</strong><span id="notifTime" style="font-size:0.65rem; display:block;">just ordered • 3 min ago</span></div></div>
 
 <script>
-const WHATSAPP_NUMBER = '923209234018';
+const WHATSAPP_NUMBER = '923001234567';
 const UNIT_PRICE = 2799;
 const images = ['https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800','https://crystallamppk.myshopify.com/cdn/shop/files/581248621-600x450.jpg?v=1777889576&width=800','https://crystallamppk.myshopify.com/cdn/shop/files/3efbd89f7893ad5b38cc8796f0a2a201_jpg_720x720q80_jpg.webp?v=1777889576&width=800'];
-const reviews = [{ name: 'Fatima Malik', city: 'Lahore', stars: 5, text: 'Absolutely love this fan! Perfect for load shedding, battery lasts all day. Folds tiny. COD was super smooth.', date: '2 days ago' }, { name: 'Hamza Siddiqui', city: 'Karachi', stars: 5, text: 'Strong airflow, quiet operation. Built like a tank. Best 2799 I\'ve spent. Works even while charging.', date: '5 days ago' }, { name: 'Sana Raza', city: 'Islamabad', stars: 5, text: 'Bought two for my parents. They love the foldable design and battery backup. Free shipping was fast!', date: '1 week ago' }, { name: 'Ali Raza', city: 'Multan', stars: 4, text: 'Finally a fan that works during load shedding. 20% off was a steal! Worth every rupee.', date: '1 week ago' }, { name: 'Zara Ahmed', city: 'Karachi', stars: 5, text: 'Super compact and powerful. I carry it in my purse everywhere. Great customer service.', date: '2 weeks ago' }, { name: 'Bilal Khan', city: 'Lahore', stars: 5, text: 'Ordered for my office desk. Silent enough for meetings. Very happy with this purchase.', date: '2 weeks ago' }];
+const reviews = [{ name: 'Fatima Malik', city: 'Lahore', stars: 5, text: 'Absolutely love this fan! Perfect for load shedding, battery lasts all day. Folds tiny. COD was super smooth.', date: '2 days ago' }, { name: 'Hamza Siddiqui', city: 'Karachi', stars: 5, text: 'Strong airflow, quiet operation. Built like a tank. Best 2799 I\'ve spent.', date: '5 days ago' }, { name: 'Sana Raza', city: 'Islamabad', stars: 5, text: 'Bought two for my parents. They love the foldable design.', date: '1 week ago' }, { name: 'Ali Raza', city: 'Multan', stars: 4, text: 'Finally a fan that works during load shedding. 20% off was a steal!', date: '1 week ago' }, { name: 'Zara Ahmed', city: 'Karachi', stars: 5, text: 'Super compact and powerful. I carry it in my purse everywhere.', date: '2 weeks ago' }, { name: 'Bilal Khan', city: 'Lahore', stars: 5, text: 'Ordered for my office desk. Silent enough for meetings.', date: '2 weeks ago' }];
 function reviewHTML(r){ const stars='★'.repeat(r.stars)+'☆'.repeat(5-r.stars); return `<div class="review-card"><div class="review-stars">${stars}</div><div class="review-text">"${r.text}"</div><div><strong>${r.name}</strong> · ${r.city}<div class="verified-badge">✅ Verified Buyer</div></div></div>`; }
 document.getElementById('reviewsGrid').innerHTML = reviews.map(reviewHTML).join('');
 document.getElementById('reviewsGridFull').innerHTML = reviews.map(reviewHTML).join('');
@@ -345,10 +358,10 @@ function changeQty(d){ let v=parseInt(document.getElementById('qtyInput').value)
 function openCheckout(){ document.getElementById('checkoutModal').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeCheckout(){ document.getElementById('checkoutModal').classList.remove('open'); document.body.style.overflow=''; }
 function closeThankyou(){ document.getElementById('thankyouModal').classList.remove('open'); document.body.style.overflow=''; }
-function openWhatsApp(msg){ window.open(`https://wa.me/${923209234018}?text=${encodeURIComponent(msg)}`, '_blank'); }
+function openWhatsApp(msg){ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank'); }
 function orderViaWhatsApp(e){ e.preventDefault(); let q=parseInt(document.getElementById('qtyInput').value); openWhatsApp(`Hi! I'd like to order Fans O Mini Fan. Qty:${q} Total:Rs.${q*UNIT_PRICE} COD.`); }
 function subscribeWhatsApp(){ let ph=document.getElementById('waSubPhone').value; if(ph) openWhatsApp(`Subscribe me to Fans O updates. My number: ${ph}`); else alert('Please enter phone number'); }
-async function submitOrder(e){ e.preventDefault(); closeCheckout(); document.getElementById('thankyouModal').classList.add('open'); document.getElementById('tyOrderSummary').innerHTML = '<strong>Order Summary</strong><br>Product: Fans O Mini Fan (Green)<br>Qty: '+document.getElementById('qtyInput').value+'<br>Total: Rs. '+(parseInt(document.getElementById('qtyInput').value)*UNIT_PRICE)+'<br>Payment: Cash on Delivery'; }
+async function submitOrder(e){ e.preventDefault(); const name=document.getElementById('f-name').value; const phone=document.getElementById('f-phone').value; const city=document.getElementById('f-city').value; const address=document.getElementById('f-address').value; if(!name||!phone||!city||!address){ alert('Please fill all fields.'); return; } if(!/^03\d{9}$/.test(phone.replace(/\s/g,''))){ alert('Please enter a valid Pakistani phone number (03xxxxxxxxx).'); return; } closeCheckout(); document.getElementById('thankyouModal').classList.add('open'); document.getElementById('tyOrderSummary').innerHTML = '<strong>Order Summary</strong><br>Product: Fans O Mini Fan (Green)<br>Qty: '+document.getElementById('qtyInput').value+'<br>Total: Rs. '+(parseInt(document.getElementById('qtyInput').value)*UNIT_PRICE)+'<br>Payment: Cash on Delivery<br>Delivery to: '+city; }
 async function submitContactForm(e){ e.preventDefault(); alert('Message sent! We will respond within 2-4 hours.'); document.getElementById('contactForm').reset(); }
 function showPage(p){ document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active')); document.getElementById('page-'+p).classList.add('active'); document.querySelectorAll('.navbar-links button').forEach(b=>b.classList.remove('active')); document.getElementById('nav-'+p).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
 document.getElementById('footerYear').innerText = new Date().getFullYear();

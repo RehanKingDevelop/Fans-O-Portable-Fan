@@ -142,10 +142,17 @@
   .feature-title { font-weight: 800; font-size: 0.85rem; margin-bottom: 5px; }
   .feature-desc { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
 
+  /* Enhanced Description Section */
+  .desc-section { background: white; }
   .desc-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
   @media (max-width: 768px) { .desc-content { grid-template-columns: 1fr; gap: 25px; } }
   .desc-text p { color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; font-size: 0.85rem; }
-  .whats-in-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; }
+  .feature-list-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
+  .feature-list-item { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text); background: var(--bg); padding: 8px 12px; border-radius: 12px; }
+  .feature-list-item span:first-child { font-size: 1rem; }
+  .perfect-for-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+  .perfect-tag { background: var(--primary-xlight); color: var(--primary-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+  .whats-in-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; margin-top: 20px; }
   .box-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
   .box-item:last-child { border-bottom: none; }
 
@@ -193,7 +200,6 @@
   .input-phone { flex: 1; padding: 12px 14px; border: 2px solid var(--border); border-radius: 12px; font-size: 0.85rem; }
   .btn-sub { padding: 12px 20px; background: #22c55e; color: white; border-radius: 12px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
 
-  /* Checkout Modal with COD Badge */
   .modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px; }
   .modal-overlay.open { display: flex; }
   .modal-box { background: white; border-radius: 28px; max-width: 520px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl); }
@@ -203,35 +209,26 @@
   .modal-body { padding: 24px; }
   .modal-order-summary { display: flex; gap: 14px; background: var(--bg); padding: 14px; border-radius: 16px; margin-bottom: 20px; border: 1px solid var(--border); }
   .modal-order-img { width: 60px; height: 60px; border-radius: 12px; object-fit: cover; }
-  
-  /* Trust Badge in Checkout */
   .cod-trust-badge { background: linear-gradient(135deg, #fef3c7, #fef9e6); border: 1px solid var(--gold); border-radius: 16px; padding: 14px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .cod-trust-badge .icon { font-size: 1.5rem; }
   .cod-trust-badge .text { font-weight: 800; color: #92400e; font-size: 0.9rem; }
   .cod-trust-badge .sub { font-size: 0.7rem; color: #a16207; font-weight: 500; }
-
   .form-group { margin-bottom: 16px; }
   .form-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 5px; display: block; }
   .form-input, .form-select, .form-textarea { width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 14px; font-size: 0.9rem; }
   .btn-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; font-weight: 800; font-size: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.25s; border: none; }
-  .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,118,110,0.4); }
-
   .thankyou-modal { position: fixed; inset: 0; z-index: 1100; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; padding: 20px; }
   .thankyou-modal.open { display: flex; }
   .thankyou-box { background: white; border-radius: 28px; padding: 32px 28px; max-width: 420px; width: 100%; text-align: center; }
-
   .live-notif { position: fixed; bottom: 20px; left: 20px; z-index: 900; background: white; border-radius: 14px; padding: 12px 16px; max-width: 270px; box-shadow: 0 8px 28px rgba(0,0,0,0.15); border: 1px solid var(--border); display: none; align-items: center; gap: 12px; }
   .live-notif.show { display: flex; }
   .notif-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--primary-xlight); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
-  .notif-dot { position: absolute; top: -4px; left: -4px; width: 10px; height: 10px; border-radius: 50%; background: #22c55e; border: 2px solid white; }
-
   .footer { background: #0f172a; color: rgba(255,255,255,0.7); margin-top: 0; }
   .footer-top { padding: 35px 0 25px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
   @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
   @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; gap: 25px; } }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 15px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.7rem; }
-
   .sec-heading { text-align: center; margin-bottom: 30px; }
   .sec-heading h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; margin-bottom: 6px; }
   .sec-heading p { font-size: 0.8rem; color: var(--text-muted); }
@@ -245,17 +242,17 @@
 </head>
 <body>
 
-<div class="urgent-bar"><span>⚡ URGENT</span> <strong>50% OFF</strong> Ends Soon — Free Shipping 🇵🇰 | Only <strong>17 units</strong> left in stock</div>
+<div class="urgent-bar"><span>⚡ URGENT</span> <strong>20% OFF</strong> Ends Soon — Free Shipping 🇵🇰 | Only <strong>17 units</strong> left in stock</div>
 
 <nav class="navbar"><div class="navbar-inner"><div class="navbar-brand"><div class="navbar-icon">🌬️</div>Fans O<sup>™</sup></div><div class="navbar-links"><button onclick="showPage('home')" class="active" id="nav-home">Home</button><button onclick="showPage('reviews')" id="nav-reviews">Reviews</button><button onclick="showPage('contact')" id="nav-contact">Contact</button></div><div class="navbar-cod">💵 Cash on Delivery</div></div></nav>
 
 <div id="page-home" class="page active">
   <section class="product-hero"><div class="container"><div class="product-grid">
-    <div><div class="gallery-main"><div class="gallery-badge">50% OFF</div><img id="mainImg" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800" alt="Fan"></div><div class="gallery-thumbs"><div class="gallery-thumb active" onclick="switchImg(this,0)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"></div><div class="gallery-thumb" onclick="switchImg(this,1)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/581248621-600x450.jpg?v=1777889576&width=800"></div><div class="gallery-thumb" onclick="switchImg(this,2)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/3efbd89f7893ad5b38cc8796f0a2a201_jpg_720x720q80_jpg.webp?v=1777889576&width=800"></div></div></div>
-    <div><div class="product-badge-row"><span class="badge badge-green">✅ In Stock</span><span class="badge badge-gold">🔥 Bestseller</span><span class="badge badge-red">⚡ Limited Offer</span></div>
+    <div><div class="gallery-main"><div class="gallery-badge">20% OFF</div><img id="mainImg" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800" alt="Fan"></div><div class="gallery-thumbs"><div class="gallery-thumb active" onclick="switchImg(this,0)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"></div><div class="gallery-thumb" onclick="switchImg(this,1)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/581248621-600x450.jpg?v=1777889576&width=800"></div><div class="gallery-thumb" onclick="switchImg(this,2)"><img src="https://crystallamppk.myshopify.com/cdn/shop/files/3efbd89f7893ad5b38cc8796f0a2a201_jpg_720x720q80_jpg.webp?v=1777889576&width=800"></div></div></div>
+    <div><div class="product-badge-row"><span class="badge badge-green">✅ In Stock</span><span class="badge badge-gold">🔥 Bestseller</span><span class="badge badge-red">⚡ 20% OFF</span></div>
       <h1 class="product-title">Fans O Foldable Rechargeable Mini Fan</h1>
       <div class="product-rating-row"><div class="stars">★★★★★</div><span class="rating-text">4.9</span><span class="reviews-link" onclick="showPage('reviews')">(324 reviews)</span><span class="sold-count">| 10,000+ sold</span></div>
-      <div class="price-block"><div><span class="price-main">Rs. 2,480</span><span class="price-original">Rs. 4,960</span></div><span class="price-save">You save Rs. 2,480 (50% OFF)</span></div>
+      <div class="price-block"><div><span class="price-main">Rs. 2,799</span><span class="price-original">Rs. 3,500</span></div><span class="price-save">You save Rs. 701 (20% OFF)</span></div>
       <div class="stock-bar-wrapper"><div class="stock-label">Only 17 left in stock — order soon!</div><div class="stock-track"><div class="stock-fill"></div></div></div>
       <div class="trust-row"><div class="trust-item"><div class="trust-icon">💵</div><div class="trust-label">Cash on Delivery</div></div><div class="trust-item"><div class="trust-icon">🔋</div><div class="trust-label">8-10h Battery</div></div><div class="trust-item"><div class="trust-icon">📦</div><div class="trust-label">Free Shipping</div></div><div class="trust-item"><div class="trust-icon">🔁</div><div class="trust-label">1-Month Warranty</div></div></div>
       <div class="qty-row"><span class="qty-label">Quantity:</span><div class="qty-control"><button class="qty-btn" onclick="changeQty(-1)">−</button><input class="qty-input" type="number" id="qtyInput" value="1" min="1" max="5" readonly><button class="qty-btn" onclick="changeQty(1)">+</button></div><span style="font-size:0.7rem; color:var(--text-muted);">Max 5 per order</span></div>
@@ -266,15 +263,59 @@
 
   <section class="stats-section"><div class="container"><div class="stats-grid"><div class="stat-card"><span class="stat-num">10,000+</span><div class="stat-label">Units Sold</div></div><div class="stat-card"><span class="stat-num">4.9★</span><div class="stat-label">Avg Rating</div></div><div class="stat-card"><span class="stat-num">100%</span><div class="stat-label">Cash on Delivery</div></div><div class="stat-card"><span class="stat-num">Free</span><div class="stat-label">Shipping</div></div></div></div></section>
 
-  <section class="features-section section"><div class="container"><div class="sec-heading"><h2>Why This Fan Is Different</h2><div class="sec-divider"></div></div><div class="features-grid"><div class="feature-card"><div class="feature-icon">📐</div><div class="feature-title">Foldable Design</div><div class="feature-desc">Fits in pocket, bag, or cup holder.</div></div><div class="feature-card"><div class="feature-icon">🔋</div><div class="feature-title">Rechargeable Battery</div><div class="feature-desc">8-10 hours, works during load shedding.</div></div><div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">3 Speeds</div><div class="feature-desc">Low/Medium/High.</div></div><div class="feature-card"><div class="feature-icon">🤫</div><div class="feature-title">Ultra Quiet</div><div class="feature-desc">&lt;30dB, perfect for offices.</div></div></div></div></section>
+  <!-- ENHANCED DESCRIPTION SECTION WITH NEW FEATURES -->
+  <section class="desc-section section">
+    <div class="container">
+      <div class="desc-content">
+        <div class="desc-text">
+          <p><strong>Stay cool anywhere</strong> with this compact and powerful mini fan. Designed with a foldable body and rechargeable battery, it's perfect for home, office, travel, study, makeup, camping, and outdoor use.</p>
+          <div class="feature-list-grid">
+            <div class="feature-list-item"><span>✅</span> Foldable & adjustable design</div>
+            <div class="feature-list-item"><span>✅</span> Rechargeable long-lasting battery</div>
+            <div class="feature-list-item"><span>✅</span> Strong wind with low noise</div>
+            <div class="feature-list-item"><span>✅</span> Portable and lightweight</div>
+            <div class="feature-list-item"><span>✅</span> USB charging support</div>
+            <div class="feature-list-item"><span>✅</span> Easy to carry in bag or backpack</div>
+            <div class="feature-list-item"><span>✅</span> Can be used on desk or handheld</div>
+          </div>
+          <div style="margin-top: 20px;">
+            <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px;">🎯 Perfect For:</h4>
+            <div class="perfect-for-tags">
+              <span class="perfect-tag">Summer heat</span>
+              <span class="perfect-tag">Office desk</span>
+              <span class="perfect-tag">Students</span>
+              <span class="perfect-tag">Travel & camping</span>
+              <span class="perfect-tag">Makeup and skincare</span>
+              <span class="perfect-tag">Indoor & outdoor use</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="whats-in-box">
+            <h3>📦 What's In The Box</h3>
+            <div class="box-item"><div>🌬️</div><div><strong>1× Green Foldable Fan</strong></div></div>
+            <div class="box-item"><div>🔌</div><div>1× USB Charging Cable</div></div>
+            <div class="box-item"><div>📖</div><div>1× User Manual</div></div>
+          </div>
+          <div style="margin-top: 18px; background: var(--gold-light); border: 1px solid var(--gold); border-radius: var(--radius); padding: 15px;">
+            <h4 style="font-size: 0.85rem; font-weight: 800; color: #92400e;">⚠️ Care Instructions</h4>
+            <ul style="list-style: none; font-size: 0.75rem; color: #a16207; margin-top: 8px;">
+              <li>💧 Keep away from water</li>
+              <li>🪨 Avoid dropping on hard surfaces</li>
+              <li>❄️ Store in cool, dry place</li>
+              <li>🔋 Charge every 2-3 months if not in use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="desc-section section"><div class="container"><div class="desc-content"><div class="desc-text"><p>Regular fans are too big to carry. Cheap fans break within weeks. Introducing the <strong>Fans O Foldable Rechargeable Mini Fan</strong> — designed for Pakistan's extreme summer heat and load shedding. We've sold over <strong>10,000 units</strong> across Pakistan.</p></div><div><div class="whats-in-box"><h3>📦 What's In The Box</h3><div class="box-item"><div>🌬️</div><div><strong>1× Green Foldable Fan</strong></div></div><div class="box-item"><div>🔌</div><div>1× USB Charging Cable</div></div><div class="box-item"><div>📖</div><div>1× User Manual</div></div></div></div></div></div></section>
-
-  <div class="container"><div class="sec-heading"><h2>Technical Specifications</h2><div class="sec-divider"></div></div><table class="specs-table"><thead><tr><th>Specification</th><th>Details</th></tr></thead><tbody><tr><td>Battery Life</td><td>8–10 hours</td></tr><tr><td>Charging Time</td><td>2–3 hours</td></tr><tr><td>Speed Settings</td><td>3 (Low/Medium/High)</td></tr><tr><td>Material</td><td>ABS Plastic</td></tr></tbody></table></div>
+  <div class="container"><div class="sec-heading"><h2>Technical Specifications</h2><div class="sec-divider"></div></div><table class="specs-table"><thead><tr><th>Specification</th><th>Details</th></tr></thead><tbody><tr><td>Battery Life</td><td>8–10 hours</td> </tr> <tr><td>Charging Time</td><td>2–3 hours</td> </tr> <tr><td>Speed Settings</td><td>3 (Low/Medium/High)</td> </tr> <tr><td>Material</td><td>ABS Plastic</td> </tr> </tbody> </table> </div>
 
   <section class="reviews-section section"><div class="container"><div class="sec-heading"><h2>What Customers Are Saying</h2><div class="sec-divider"></div></div><div class="rating-overview"><div class="rating-big"><div class="rating-big-num">4.9</div><div class="stars">★★★★★</div><p>324 reviews</p></div><div class="rating-bars"><div class="rating-bar-row"><span>5★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:91%"></div></div><span>91%</span></div><div class="rating-bar-row"><span>4★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:6%"></div></div><span>6%</span></div></div></div><div class="reviews-grid" id="reviewsGrid"></div><div class="text-center" style="margin-top:20px; text-align:center;"><button onclick="showPage('reviews')" style="padding:10px 28px;border:2px solid var(--primary);color:var(--primary);border-radius:40px;font-weight:700;font-size:0.8rem;background:transparent;cursor:pointer;">View All 324 Reviews →</button></div></div></section>
 
-  <section class="cod-section"><div class="container"><div class="cod-steps"><div class="cod-step"><div class="cod-step-num">1</div><h4>Place Order</h4><p>60 seconds</p></div><div class="cod-step"><div class="cod-step-num">2</div><h4>Confirm Call</h4><p>Team calls you</p></div><div class="cod-step"><div class="cod-step-num">3</div><h4>Fast Delivery</h4><p>2-5 days</p></div><div class="cod-step"><div class="cod-step-num">4</div><h4>Pay on Delivery</h4><p>Rs. 2,480</p></div></div></div></section>
+  <section class="cod-section"><div class="container"><div class="cod-steps"><div class="cod-step"><div class="cod-step-num">1</div><h4>Place Order</h4><p>60 seconds</p></div><div class="cod-step"><div class="cod-step-num">2</div><h4>Confirm Call</h4><p>Team calls you</p></div><div class="cod-step"><div class="cod-step-num">3</div><h4>Fast Delivery</h4><p>2-5 days</p></div><div class="cod-step"><div class="cod-step-num">4</div><h4>Pay on Delivery</h4><p>Rs. 2,799</p></div></div></div></section>
 
   <section class="whatsapp-section"><div class="container"><div class="whatsapp-inner"><div class="whatsapp-cta"><h2>Have Questions? We're on WhatsApp</h2><p>We respond within 30 minutes — even on weekends!</p><a class="btn-wa-big" href="#" onclick="openWhatsApp('Hi! I have a question about the Fans O Foldable Mini Fan.'); return false;">💬 Chat on WhatsApp</a></div><div class="wa-subscribe-card"><h3>📲 Get Order Updates</h3><div class="input-group"><input type="tel" class="input-phone" id="waSubPhone" placeholder="0300 1234567"><button class="btn-sub" onclick="subscribeWhatsApp()">Subscribe</button></div></div></div></div></section>
 </div>
@@ -285,16 +326,7 @@
 
 <footer class="footer"><div class="footer-top"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo" style="display:flex; align-items:center; gap:10px; font-weight:800;"><div style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:8px;display:flex;align-items:center;justify-content:center;">🌬️</div>Fans O™</div><p class="footer-desc">Pakistan's trusted foldable rechargeable mini fan.</p></div><div class="footer-section"><h4>Quick Links</h4><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('reviews')">Reviews</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div class="footer-section"><h4>Policies</h4><ul class="footer-links"><li><a>7-Day Returns</a></li><li><a>1-Month Warranty</a></li></ul></div></div></div></div><div class="footer-bottom"><div class="container"><div>© <span id="footerYear"></span> Fans O™. All Rights Reserved.</div><div class="made-with">Made with ❤️ in Pakistan 🇵🇰</div></div></div></footer>
 
-<!-- CHECKOUT MODAL with COD Trust Badge -->
-<div class="modal-overlay" id="checkoutModal"><div class="modal-box"><div class="modal-header"><h3>Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div><div class="modal-body">
-  <div class="modal-order-summary"><img class="modal-order-img" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"><div><h4 style="font-weight:800;">Fans O Mini Fan</h4><div>Qty: <span id="modalQty">1</span> × Rs. 2,480</div><div style="font-weight:800;">Total: Rs. <span id="modalTotal">2,480</span></div></div></div>
-  
-  <!-- Cash on Delivery Trust Badge -->
-  <div class="cod-trust-badge"><span class="icon">💵</span><div><div class="text">100% Cash on Delivery</div><div class="sub">Pay only when you receive the product — No advance payment</div></div><span class="icon"></span></div>
-  
-  <form id="orderForm" onsubmit="submitOrder(event)"><div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="f-name" required></div><div class="form-group"><label class="form-label">Phone (03xxxxxxxxx) *</label><input class="form-input" id="f-phone" required></div><div class="form-group"><label class="form-label">City *</label><select class="form-select" id="f-city"><option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Multan</option></select></div><div class="form-group"><label class="form-label">Complete Address *</label><textarea class="form-textarea" id="f-address" rows="2" required></textarea></div>
-  <button type="submit" class="btn-submit">✅ Place Order</button></form>
-</div></div></div>
+<div class="modal-overlay" id="checkoutModal"><div class="modal-box"><div class="modal-header"><h3>Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div><div class="modal-body"><div class="modal-order-summary"><img class="modal-order-img" src="https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800"><div><h4 style="font-weight:800;">Fans O Mini Fan</h4><div>Qty: <span id="modalQty">1</span> × Rs. 2,799</div><div style="font-weight:800;">Total: Rs. <span id="modalTotal">2,799</span></div></div></div><div class="cod-trust-badge"><span class="icon">💵</span><div><div class="text">100% Cash on Delivery</div><div class="sub">Pay only when you receive the product — No advance payment</div></div><span class="icon"></span></div><form id="orderForm" onsubmit="submitOrder(event)"><div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="f-name" required></div><div class="form-group"><label class="form-label">Phone (03xxxxxxxxx) *</label><input class="form-input" id="f-phone" required></div><div class="form-group"><label class="form-label">City *</label><select class="form-select" id="f-city"><option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Multan</option></select></div><div class="form-group"><label class="form-label">Complete Address *</label><textarea class="form-textarea" id="f-address" rows="2" required></textarea></div><button type="submit" class="btn-submit">✅ Place Order</button></form></div></div></div>
 
 <div class="thankyou-modal" id="thankyouModal"><div class="thankyou-box"><div class="thankyou-icon">🎉</div><h2>Order Placed!</h2><p>Our team will call you within 2-4 hours to confirm.</p><div class="order-summary-box" id="tyOrderSummary" style="background:var(--bg); padding:14px; border-radius:14px; margin:16px 0;"></div><button class="btn-close-ty" onclick="closeThankyou()" style="padding:12px 24px; background:linear-gradient(135deg,var(--primary),var(--primary-light)); color:white; font-weight:800; border-radius:40px; cursor:pointer;">Continue Shopping</button></div></div>
 
@@ -302,9 +334,9 @@
 
 <script>
 const WHATSAPP_NUMBER = '923209234018';
-const UNIT_PRICE = 2480;
+const UNIT_PRICE = 2799;
 const images = ['https://crystallamppk.myshopify.com/cdn/shop/files/Gemini_Generated_Image_o5kss9o5kss9o5ks.png?v=1778053843&width=800','https://crystallamppk.myshopify.com/cdn/shop/files/581248621-600x450.jpg?v=1777889576&width=800','https://crystallamppk.myshopify.com/cdn/shop/files/3efbd89f7893ad5b38cc8796f0a2a201_jpg_720x720q80_jpg.webp?v=1777889576&width=800'];
-const reviews = [{ name: 'Fatima Malik', city: 'Lahore', stars: 5, text: 'Absolutely love this fan! Perfect for load shedding, battery lasts all day.', date: '2 days ago' }, { name: 'Hamza Siddiqui', city: 'Karachi', stars: 5, text: 'Strong airflow, quiet operation. Built like a tank.', date: '5 days ago' }, { name: 'Sana Raza', city: 'Islamabad', stars: 5, text: 'Bought two for my parents. They love the foldable design.', date: '1 week ago' }, { name: 'Ali Raza', city: 'Multan', stars: 4, text: 'Finally a fan that works during load shedding. 50% off was a steal!', date: '1 week ago' }, { name: 'Zara Ahmed', city: 'Karachi', stars: 5, text: 'Super compact and powerful. I carry it in my purse everywhere.', date: '2 weeks ago' }, { name: 'Bilal Khan', city: 'Lahore', stars: 5, text: 'Ordered for my office desk. Silent enough for meetings.', date: '2 weeks ago' }];
+const reviews = [{ name: 'Fatima Malik', city: 'Lahore', stars: 5, text: 'Absolutely love this fan! Perfect for load shedding, battery lasts all day. Folds tiny. COD was super smooth.', date: '2 days ago' }, { name: 'Hamza Siddiqui', city: 'Karachi', stars: 5, text: 'Strong airflow, quiet operation. Built like a tank. Best 2799 I\'ve spent. Works even while charging.', date: '5 days ago' }, { name: 'Sana Raza', city: 'Islamabad', stars: 5, text: 'Bought two for my parents. They love the foldable design and battery backup. Free shipping was fast!', date: '1 week ago' }, { name: 'Ali Raza', city: 'Multan', stars: 4, text: 'Finally a fan that works during load shedding. 20% off was a steal! Worth every rupee.', date: '1 week ago' }, { name: 'Zara Ahmed', city: 'Karachi', stars: 5, text: 'Super compact and powerful. I carry it in my purse everywhere. Great customer service.', date: '2 weeks ago' }, { name: 'Bilal Khan', city: 'Lahore', stars: 5, text: 'Ordered for my office desk. Silent enough for meetings. Very happy with this purchase.', date: '2 weeks ago' }];
 function reviewHTML(r){ const stars='★'.repeat(r.stars)+'☆'.repeat(5-r.stars); return `<div class="review-card"><div class="review-stars">${stars}</div><div class="review-text">"${r.text}"</div><div><strong>${r.name}</strong> · ${r.city}<div class="verified-badge">✅ Verified Buyer</div></div></div>`; }
 document.getElementById('reviewsGrid').innerHTML = reviews.map(reviewHTML).join('');
 document.getElementById('reviewsGridFull').innerHTML = reviews.map(reviewHTML).join('');
@@ -316,7 +348,7 @@ function closeThankyou(){ document.getElementById('thankyouModal').classList.rem
 function openWhatsApp(msg){ window.open(`https://wa.me/${923209234018}?text=${encodeURIComponent(msg)}`, '_blank'); }
 function orderViaWhatsApp(e){ e.preventDefault(); let q=parseInt(document.getElementById('qtyInput').value); openWhatsApp(`Hi! I'd like to order Fans O Mini Fan. Qty:${q} Total:Rs.${q*UNIT_PRICE} COD.`); }
 function subscribeWhatsApp(){ let ph=document.getElementById('waSubPhone').value; if(ph) openWhatsApp(`Subscribe me to Fans O updates. My number: ${ph}`); else alert('Please enter phone number'); }
-async function submitOrder(e){ e.preventDefault(); closeCheckout(); document.getElementById('thankyouModal').classList.add('open'); document.getElementById('tyOrderSummary').innerHTML = '<strong>Order Summary</strong><br>Product: Fans O Mini Fan<br>Qty: '+document.getElementById('qtyInput').value+'<br>Total: Rs. '+(parseInt(document.getElementById('qtyInput').value)*UNIT_PRICE)+'<br>Payment: Cash on Delivery'; }
+async function submitOrder(e){ e.preventDefault(); closeCheckout(); document.getElementById('thankyouModal').classList.add('open'); document.getElementById('tyOrderSummary').innerHTML = '<strong>Order Summary</strong><br>Product: Fans O Mini Fan (Green)<br>Qty: '+document.getElementById('qtyInput').value+'<br>Total: Rs. '+(parseInt(document.getElementById('qtyInput').value)*UNIT_PRICE)+'<br>Payment: Cash on Delivery'; }
 async function submitContactForm(e){ e.preventDefault(); alert('Message sent! We will respond within 2-4 hours.'); document.getElementById('contactForm').reset(); }
 function showPage(p){ document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active')); document.getElementById('page-'+p).classList.add('active'); document.querySelectorAll('.navbar-links button').forEach(b=>b.classList.remove('active')); document.getElementById('nav-'+p).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
 document.getElementById('footerYear').innerText = new Date().getFullYear();
